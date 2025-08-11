@@ -45,7 +45,7 @@ const express = require('express'); // Importa o Framework express
 const app = express(); // Cria o servidor
 const port = 3000; // Variável para armazenar a porta
 
-app.linsten(port, () => {
+app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`)
 })
 ```
