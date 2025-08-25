@@ -1,17 +1,20 @@
 
 // Váriaveis principais
 const express = require('express'); // Importa o Framework express
+const cors = require('cors')
+
 const { METHODS } = require('http');
 const app = express(); // Cria o servidor
 const port = 3000; // Variável para armazenar a porta
 
-// Para permitir receber json nas requisições
+// Para permitir receber JSON nas requisições
 app.use(express.json())
+app.use(cors())
 
 // Criação dos usuários
 const usuarios = [
-    {"id": 1,"nome": "Admin", "idade": 20, "senha": "admin123"},
-    {"id": 2,"nome": "João", "idade": 20, "senha": "123"},
+    { "id": 1, "nome": "Admin", "idade": 17, "senha": "admin123" },
+    { "id": 2, "nome": "João", "idade": 18, "senha": "joao123" }
 ]
 
 // Parte do site
@@ -35,7 +38,7 @@ app.get("/usuarios/:id", (req, res) => {
     if (user != null) {
         res.send(user)
     } else {
-        res.status(404).send(`usuário não encontrado`)
+        res.status(404).send(`Usuário ${id} não encontrado!`)
     }
 })
 
@@ -60,7 +63,7 @@ app.put("/usuarios/:id", (req, res) => {
         usuarios[index] = novoUsuario
         res.status(201).send(novoUsuario)
     } else {
-        res.status(404).send(`Usuário não encontrado!`)
+        res.status(404).send(`Usuário ${id} não encontrado!`)
     }
 })
 
@@ -73,6 +76,6 @@ app.delete("/usuarios/:id", (req, res) => {
         usuarios.splice(index, 1)
         res.status(204).send(`Usuário com o id: ${id} removido com sucesso!`)
     } else {
-        res.status(404).send(`Usuário não encontrado!`)
+        res.status(404).send(`Usuário ${id} não encontrado!`)
     }
 })

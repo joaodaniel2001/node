@@ -19,13 +19,13 @@ npm init -y             # Coloca no modo padrão
 
 - **Iniciar o servidor:**
 
-    ```javascript
+    ```bash
     node .\server.js
     ```
 
     - De maneira automática:
     ```bash
-    
+    node .\server.js --watch
     ```
     
 ### Frameworks
@@ -49,5 +49,3 @@ app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`)
 })
 ```
-- Após isso,
-
