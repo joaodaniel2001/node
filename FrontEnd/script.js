@@ -18,6 +18,7 @@ fetch("http://localhost:3000/usuarios").then(res => {
         <td class="col-3">${usuario.nome}</td>
         <td class="col-3">${usuario.idade}</td>
         <td class="col-3">${usuario.senha}</td>
+        <td class="col-3"><a class="btn btn-outline-primary" href="userUpdate/index.html?id=${usuario.id}">Atualizar</a></td>
         </tr>`
     });
     

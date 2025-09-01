@@ -17,6 +17,8 @@ const usuarios = [
     { "id": 2, "nome": "João", "idade": 18, "senha": "joao123" }
 ]
 
+let nextId = 3;
+
 // Parte do site
 app.get("/", (req, res) => {
     res.send(`Primeiro servidor AI PSII 2025/1 V1`)
@@ -46,7 +48,7 @@ app.get("/usuarios/:id", (req, res) => {
 app.post("/usuarios", (req, res) => {
     const novoUsuario = req.body
 
-    novoUsuario.id = usuarios.length + 1
+    novoUsuario.id = nextId++
     usuarios.push(novoUsuario)
 
     res.status(201).send(novoUsuario)
@@ -74,7 +76,7 @@ app.delete("/usuarios/:id", (req, res) => {
 
     if (index != null) {
         usuarios.splice(index, 1)
-        res.status(204).send(`Usuário com o id: ${id} removido com sucesso!`)
+        res.status(200).send(`Usuário com o id: ${id} removido com sucesso!`)
     } else {
         res.status(404).send(`Usuário ${id} não encontrado!`)
     }
