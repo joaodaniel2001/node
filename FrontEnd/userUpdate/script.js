@@ -1,6 +1,4 @@
 const params = new URLSearchParams(window.location.search);
-//console.log(window.location.search);
-//console.log(params.get("id"));
 
 const usuarioId = params.get("id");
 let nome = document.getElementById("nome");
@@ -46,7 +44,6 @@ function atualizarUsuario(event) {
         .then(response => response.json())
 
         .then(data => {
-            alert(`Usuário ${usuarioId} alterado com sucesso`)
             window.location.href = "../index.html"
         })
 
