@@ -16,7 +16,7 @@ fetch("http://localhost:3000/usuarios").then(res => {
             <td class="col-3">${usuario.id}</td>
             <td class="col-3">${usuario.nome}</td>
             <td class="col-3">${usuario.idade}</td>
-            <td class="col-3">${usuario.senha}</td>
+            <td class="col-3">${usuario.cep}</td>
             <td class="col-3"><a class="btn btn-outline-primary" href="userUpdate/index.html?id=${usuario.id}">Atualizar</a></td>
             <td class="col-3"><button type="button" onclick="deletarUsuario(${usuario.id})" class="btn btn-outline-danger">Deletar</button></td>
         </tr>`

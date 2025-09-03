@@ -26,19 +26,25 @@
             <!-- Nome -->
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome de Usuário:</label>
-                <input id="nome" type="text" class="form-control">
+                <input id="nome" type="text" class="form-control" required>
             </div>
 
             <!-- Idade -->
             <div class="mb-3">
-                <label for="senha" class="form-label">Idade</label>
-                <input id="idade" type="number" class="form-control" max="120">
+                <label for="senha" class="form-label">Idade: </label>
+                <input id="idade" type="number" class="form-control" max="120" required>
             </div>
 
             <!-- Senha -->
             <div class="mb-3">
-                <label for="senha" class="form-label">Senha</label>
-                <input id="senha" type="password" class="form-control">
+                <label for="senha" class="form-label">Senha: </label>
+                <input id="senha" type="password" class="form-control" required>
+            </div>
+            
+            <!-- CEP -->
+            <div class="mb-3">
+                <label for="cep" class="form-label">CEP: </label>
+                <input id="cep" type="text" class="form-control" pattern="\d{8}" maxlength="8" minlength="8" required>
             </div>
 
             <!-- Submit -->
