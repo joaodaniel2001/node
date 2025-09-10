@@ -21,7 +21,7 @@ fetch("http://localhost:3000/usuarios").then(res => {
             <td class="col-3"><button type="button" onclick="deletarUsuario(${usuario.id})" class="btn btn-outline-danger">Deletar</button></td>
         </tr>`
     });
-    
+    console.log("foi")
 })
 // Se der algum erro geral
 .catch(err => {   
@@ -45,7 +45,7 @@ function deletarUsuario (user_id) {
                     window.location.reload();
                     return;
                 }          
-                alert(`Algo deu erradoh...`);
+                alert(`Algo deu errado...`);
             })
             
             .catch(error => console.log(error));
